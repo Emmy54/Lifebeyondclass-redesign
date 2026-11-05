@@ -43,3 +43,48 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 } else {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
+
+const scoreTable = document.querySelector('.score-table');
+
+if (scoreTable && !reduceMotion) {
+  const scoreBars = [...scoreTable.querySelectorAll('progress')].map((bar, index) => ({
+    bar,
+    target: Number(bar.value),
+    delay: index * 110,
+  }));
+
+  scoreBars.forEach(({ bar }) => { bar.value = 0; });
+
+  const animateScores = () => {
+    const duration = 900;
+    const startedAt = performance.now();
+    const easeOutCubic = (value) => 1 - ((1 - value) ** 3);
+
+    const update = (now) => {
+      let complete = true;
+
+      scoreBars.forEach(({ bar, target, delay }) => {
+        const elapsed = Math.max(0, now - startedAt - delay);
+        const progress = Math.min(elapsed / duration, 1);
+        bar.value = target * easeOutCubic(progress);
+        if (progress < 1) complete = false;
+      });
+
+      if (!complete) window.requestAnimationFrame(update);
+    };
+
+    window.requestAnimationFrame(update);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const scoreObserver = new IntersectionObserver((entries, currentObserver) => {
+      if (entries[0].isIntersecting) {
+        animateScores();
+        currentObserver.unobserve(scoreTable);
+      }
+    }, { threshold: 0.3 });
+    scoreObserver.observe(scoreTable);
+  } else {
+    animateScores();
+  }
+}

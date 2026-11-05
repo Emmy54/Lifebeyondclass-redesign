@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<title>About — Life Beyond Class | Africa's Life Intelligence Institution</title>
+<style>
+:root{
+  --navy:#1C2D52;--navy-mid:#2A3F6F;--navy-pale:#EEF1F8;--navy-faint:#F7F8FC;
+  --orange:#DF5C1A;--orange-w:#EF7340;--orange-p:#FDF1EA;--orange-f:#FEF8F4;
+  --green:#2C7843;--green-l:#56B86A;--green-p:#EDF7F0;
+  --grey:#7A8BA8;--grey-m:#B4C2D6;--grey-l:#F2F4F9;
+  --ink:#0D1A2E;--ink-s:#2C3E58;--white:#FFFFFF;--border:rgba(28,45,82,0.09);
+  --fh:'Outfit',sans-serif;--fb:'DM Sans',sans-serif;--fd:'Barlow Condensed',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);background:var(--white);color:var(--ink);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{font-family:var(--fh);font-weight:900;font-size:1.15rem;color:var(--navy);text-decoration:none;letter-spacing:-.02em;}
+.nav-logo span{color:var(--orange);}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-family:var(--fh);font-size:.82rem;font-weight:600;color:var(--ink-s);transition:color .18s;letter-spacing:-.01em;}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);}
+.nav-links a.active{border-bottom:2px solid var(--orange);padding-bottom:2px;}
+.nav-cta{background:var(--orange)!important;color:var(--white)!important;padding:.55rem 1.3rem!important;border-radius:8px!important;font-weight:700!important;transition:background .18s,transform .15s!important;border-bottom:none!important;}
+.nav-cta:hover{background:var(--orange-w)!important;transform:translateY(-1px)!important;}
+.nav-login{border:1.5px solid var(--border)!important;color:var(--navy)!important;padding:.5rem 1.1rem!important;border-radius:8px!important;font-weight:700!important;transition:border-color .18s!important;border-bottom:none!important;}
+.nav-login:hover{border-color:var(--navy)!important;}
+
+/* UTILS */
+.wrap{max-width:1180px;margin:0 auto;padding:0 2rem;}
+.pt{padding-top:68px;}
+.btn{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--fh);font-weight:700;font-size:.9rem;border-radius:10px;padding:.75rem 1.8rem;text-decoration:none;cursor:pointer;border:none;transition:all .18s;letter-spacing:-.01em;}
+.btn-primary{background:var(--orange);color:var(--white);}
+.btn-primary:hover{background:var(--orange-w);transform:translateY(-2px);box-shadow:0 8px 28px rgba(223,92,26,.28);}
+.btn-navy{background:var(--navy);color:var(--white);}
+.btn-navy:hover{background:var(--navy-mid);transform:translateY(-2px);box-shadow:0 8px 28px rgba(28,45,82,.25);}
+.btn-outline{background:transparent;border:2px solid var(--navy);color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-outline-w{background:transparent;border:2px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);}
+.btn-outline-w:hover{border-color:var(--white);color:var(--white);}
+.btn-lg{font-size:1rem;padding:.95rem 2.2rem;border-radius:12px;}
+.btn-sm{font-size:.78rem;padding:.5rem 1.1rem;border-radius:8px;}
+.eyebrow{font-family:var(--fb);font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.6rem;}
+.eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--orange);border-radius:2px;}
+.eyebrow-c{justify-content:center;}
+.eyebrow-c::before{display:none;}
+.eyebrow-c::after{content:'';display:block;width:20px;height:2px;background:var(--orange);border-radius:2px;}
+.eyebrow-w{color:rgba(255,255,255,.6);}
+.eyebrow-w::before,.eyebrow-w::after{background:rgba(255,255,255,.4);}
+.sec-title{font-family:var(--fh);font-weight:900;font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--navy);line-height:1.1;letter-spacing:-.025em;margin-bottom:.8rem;}
+.sec-title-w{color:var(--white);}
+.sec-sub{font-size:.95rem;color:var(--grey);font-weight:300;line-height:1.75;max-width:560px;}
+.sec-sub-w{color:rgba(255,255,255,.5);}
+.badge{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--fb);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:60px;padding:.28rem .8rem;}
+.badge-orange{background:var(--orange-p);color:var(--orange);border:1px solid rgba(223,92,26,.2);}
+.badge-navy{background:var(--navy-pale);color:var(--navy);border:1px solid rgba(28,45,82,.12);}
+.badge-green{background:var(--green-p);color:var(--green);border:1px solid rgba(44,120,67,.2);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.show{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.12s;}
+.reveal-d2{transition-delay:.24s;}
+.reveal-d3{transition-delay:.36s;}
+.reveal-scale{opacity:0;transform:scale(.96);transition:opacity .7s ease,transform .7s ease;}
+.reveal-scale.show{opacity:1;transform:scale(1);}
+
+/* ─── HERO ─── */
+.hero{position:relative;min-height:100vh;background:var(--navy);display:flex;align-items:center;overflow:hidden;padding:100px 0 80px;}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;}
+.hero-glow-a{position:absolute;top:-180px;right:-120px;width:700px;height:700px;background:radial-gradient(circle,rgba(223,92,26,.18) 0%,transparent 65%);pointer-events:none;}
+.hero-glow-b{position:absolute;bottom:-100px;left:-80px;width:520px;height:520px;background:radial-gradient(circle,rgba(44,120,67,.12) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.hero-kicker{display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem;}
+.hero-kicker-line{width:36px;height:2px;background:var(--orange);border-radius:2px;}
+.hero-kicker-txt{font-family:var(--fb);font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.hero-title{font-family:var(--fh);font-weight:900;font-size:clamp(2.6rem,5vw,4.2rem);color:var(--white);line-height:1.02;letter-spacing:-.035em;margin-bottom:1.4rem;}
+.hero-title em{font-style:italic;color:var(--orange);}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.58);font-weight:300;line-height:1.85;max-width:500px;margin-bottom:2.2rem;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
+.hero-proof{display:flex;gap:2rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap;}
+.hero-proof-item{text-align:left;}
+.hero-proof-val{font-family:var(--fh);font-size:1.6rem;font-weight:900;color:var(--white);letter-spacing:-.03em;}
+.hero-proof-label{font-size:.68rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:.15rem;}
+.hero-right{display:flex;flex-direction:column;gap:1rem;}
+.hero-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:1.6rem 1.8rem;backdrop-filter:blur(10px);}
+.hero-card-icon{font-size:1.5rem;margin-bottom:.7rem;}
+.hero-card-title{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--white);margin-bottom:.3rem;}
+.hero-card-body{font-size:.8rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.65;}
+.hero-card-accent{border-left:3px solid var(--orange);}
+.hero-card-accent2{border-left:3px solid var(--green-l);}
+.hero-card-accent3{border-left:3px solid var(--grey-m);}
+
+/* ─── GAP SECTION ─── */
+.gap-section{padding:96px 0;background:var(--white);}
+.gap-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.gap-left p{font-size:.92rem;color:var(--ink-s);font-weight:300;line-height:1.9;margin-bottom:1rem;}
+.gap-stat-strip{display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap;}
+.gap-stat{background:var(--navy-faint);border:1px solid var(--navy-pale);border-radius:14px;padding:1.2rem 1.4rem;flex:1;min-width:120px;}
+.gap-stat-n{font-family:var(--fh);font-size:1.8rem;font-weight:900;color:var(--navy);line-height:1;}
+.gap-stat-l{font-size:.65rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:.35rem;}
+.gap-list{display:flex;flex-direction:column;gap:.85rem;}
+.gap-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem 1.3rem;background:var(--grey-l);border-radius:14px;border-left:3px solid transparent;transition:all .2s;}
+.gap-item:hover{border-left-color:var(--orange);background:var(--orange-f);}
+.gap-item-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;}
+.gap-item-txt{font-size:.85rem;color:var(--ink-s);font-weight:400;line-height:1.55;}
+.gap-item-txt strong{font-family:var(--fh);font-weight:800;color:var(--navy);display:block;font-size:.88rem;margin-bottom:.15rem;}
+
+/* ─── ORIGIN / WHY ─── */
+.origin-section{padding:96px 0;background:var(--grey-l);}
+.origin-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.origin-right-card{background:var(--white);border:1px solid var(--border);border-radius:24px;padding:2.6rem;position:relative;overflow:hidden;}
+.origin-right-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--orange-w));}
+.origin-quote{font-family:var(--fh);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:900;color:var(--navy);line-height:1.25;letter-spacing:-.02em;margin-bottom:1.4rem;}
+.origin-quote em{font-style:italic;color:var(--orange);}
+.origin-beliefs{display:flex;flex-direction:column;gap:1rem;margin-top:1.8rem;}
+.ob-item{display:flex;align-items:flex-start;gap:.9rem;}
+.ob-num{width:28px;height:28px;border-radius:8px;background:var(--orange-p);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;flex-shrink:0;font-family:var(--fh);}
+.ob-body{}
+.ob-title{font-family:var(--fh);font-size:.88rem;font-weight:800;color:var(--navy);margin-bottom:.18rem;}
+.ob-desc{font-size:.78rem;color:var(--grey);font-weight:300;line-height:1.6;}
+
+/* ─── PHILOSOPHY ─── */
+.philosophy-section{padding:96px 0;background:var(--white);}
+.phil-header{text-align:center;max-width:680px;margin:0 auto 4rem;}
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.phil-card{border:1px solid var(--border);border-radius:20px;padding:2rem;transition:box-shadow .2s,transform .2s;position:relative;overflow:hidden;}
+.phil-card:hover{box-shadow:0 16px 48px rgba(28,45,82,.08);transform:translateY(-3px);}
+.phil-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--navy-pale);transition:background .2s;}
+.phil-card:hover::after{background:var(--orange);}
+.phil-icon{width:52px;height:52px;border-radius:14px;background:var(--navy-pale);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem;}
+.phil-title{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;}
+.phil-body{font-size:.82rem;color:var(--grey);font-weight:300;line-height:1.72;}
+
+/* ─── INTELLIGENCE FRAMEWORK ─── */
+.framework-section{padding:96px 0;background:var(--navy);position:relative;overflow:hidden;}
+.fw-bg-glow{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(223,92,26,.12) 0%,transparent 65%);pointer-events:none;}
+.fw-bg-glow2{position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(44,120,67,.09) 0%,transparent 65%);pointer-events:none;}
+.fw-header{text-align:center;max-width:700px;margin:0 auto 4rem;position:relative;z-index:2;}
+.fw-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative;z-index:2;}
+.fw-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:1.5rem 1.2rem;text-align:center;transition:all .22s;cursor:default;}
+.fw-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);transform:translateY(-4px);}
+.fw-num{font-family:var(--fd);font-size:.72rem;font-weight:800;letter-spacing:.14em;color:var(--orange);margin-bottom:.6rem;}
+.fw-icon{font-size:1.8rem;margin-bottom:.8rem;}
+.fw-name{font-family:var(--fh);font-size:.82rem;font-weight:700;color:rgba(255,255,255,.85);line-height:1.3;}
+.fw-desc{font-size:.7rem;color:rgba(255,255,255,.38);font-weight:300;line-height:1.6;margin-top:.4rem;}
+.fw-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;position:relative;z-index:2;}
+.fw-bottom-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.6rem;}
+.fw-bc-label{font-family:var(--fb);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem;}
+.fw-bc-title{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--white);margin-bottom:.4rem;}
+.fw-bc-body{font-size:.78rem;color:rgba(255,255,255,.42);font-weight:300;line-height:1.7;}
+
+/* ─── DIFFERENCE ─── */
+.diff-section{padding:96px 0;background:var(--grey-l);}
+.diff-header{margin-bottom:3.5rem;}
+.diff-table{background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.diff-thead{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--navy-faint);border-bottom:1px solid var(--border);}
+.diff-thead-cell{padding:1rem 1.5rem;font-family:var(--fh);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);}
+.diff-thead-cell.hl{color:var(--navy);}
+.diff-row{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--border);}
+.diff-row:last-child{border-bottom:none;}
+.diff-row:hover .diff-cell{background:var(--navy-faint);}
+.diff-cell{padding:1.1rem 1.5rem;font-size:.82rem;color:var(--grey);font-weight:300;line-height:1.55;display:flex;align-items:center;gap:.5rem;border-right:1px solid var(--border);}
+.diff-cell:last-child{border-right:none;}
+.diff-cell.topic{font-family:var(--fh);font-weight:700;color:var(--ink-s);font-size:.82rem;}
+.diff-cell.bad{color:var(--grey);}
+.diff-cell.good{color:var(--navy);font-weight:500;}
+.diff-cell.good::before{content:'✓';color:var(--green);font-weight:800;font-size:.75rem;flex-shrink:0;}
+.diff-cell.bad::before{content:'—';color:var(--grey-m);font-weight:800;font-size:.75rem;flex-shrink:0;}
+
+/* ─── IMPACT VISION ─── */
+.impact-section{padding:96px 0;background:var(--white);}
+.impact-header{text-align:center;max-width:640px;margin:0 auto 4rem;}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:3rem;}
+.impact-card{background:var(--navy-faint);border:1px solid var(--navy-pale);border-radius:20px;padding:2rem 1.4rem;text-align:center;transition:all .2s;}
+.impact-card:hover{box-shadow:0 12px 40px rgba(28,45,82,.08);transform:translateY(-3px);}
+.impact-n{font-family:var(--fh);font-size:2.2rem;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.03em;}
+.impact-n span{color:var(--orange);}
+.impact-label{font-size:.72rem;color:var(--grey);font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-top:.5rem;}
+.impact-vision-strip{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:20px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.ivs-title{font-family:var(--fh);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:var(--white);letter-spacing:-.025em;line-height:1.2;margin-bottom:.8rem;}
+.ivs-title em{color:var(--orange);font-style:italic;}
+.ivs-body{font-size:.88rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.8;}
+.ivs-right{display:flex;flex-direction:column;gap:.8rem;}
+.ivs-item{display:flex;align-items:center;gap:.9rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.9rem 1.2rem;}
+.ivs-item-icon{font-size:1rem;flex-shrink:0;}
+.ivs-item-txt{font-size:.8rem;color:rgba(255,255,255,.65);font-weight:400;}
+
+/* ─── LEARNER PROFILES ─── */
+.learner-section{padding:96px 0;background:var(--grey-l);}
+.learner-header{text-align:center;max-width:600px;margin:0 auto 3.5rem;}
+.learner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.lp-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2rem;transition:all .2s;position:relative;overflow:hidden;}
+.lp-card:hover{box-shadow:0 12px 40px rgba(28,45,82,.08);transform:translateY(-3px);}
+.lp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy-pale);transition:background .2s;}
+.lp-card:hover::before{background:var(--orange);}
+.lp-avatar{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.1rem;}
+.lp-role{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:.3rem;}
+.lp-desc{font-size:.82rem;color:var(--grey);font-weight:300;line-height:1.7;margin-bottom:1.1rem;}
+.lp-gains{display:flex;flex-direction:column;gap:.4rem;}
+.lp-gain{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--ink-s);font-weight:400;}
+.lp-gain::before{content:'→';color:var(--orange);font-weight:800;flex-shrink:0;}
+
+/* ─── VALUES ─── */
+.values-section{padding:96px 0;background:var(--white);}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem;}
+.val-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem 1.6rem;transition:box-shadow .2s,transform .2s;}
+.val-card:hover{box-shadow:0 12px 40px rgba(28,45,82,.08);transform:translateY(-2px);}
+.val-icon{width:48px;height:48px;border-radius:12px;background:var(--navy-pale);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem;}
+.val-name{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;}
+.val-desc{font-size:.82rem;color:var(--grey);font-weight:300;line-height:1.7;}
+
+/* ─── MOVEMENT / CTA ─── */
+.movement-section{padding:110px 0;background:var(--navy);position:relative;overflow:hidden;}
+.mv-glow{position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(223,92,26,.14) 0%,transparent 65%);pointer-events:none;}
+.mv-inner{position:relative;z-index:2;max-width:740px;margin:0 auto;text-align:center;}
+.mv-title{font-family:var(--fh);font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:900;color:var(--white);letter-spacing:-.035em;line-height:1.07;margin-bottom:1.2rem;}
+.mv-title em{font-style:italic;color:var(--orange);}
+.mv-sub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;line-height:1.85;max-width:580px;margin:0 auto 2.8rem;}
+.mv-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem;}
+.mv-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.mv-pillar{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.3rem 1.2rem;text-align:left;}
+.mv-pillar-icon{font-size:1.1rem;margin-bottom:.5rem;}
+.mv-pillar-title{font-family:var(--fh);font-size:.82rem;font-weight:800;color:rgba(255,255,255,.85);margin-bottom:.25rem;}
+.mv-pillar-body{font-size:.72rem;color:rgba(255,255,255,.38);font-weight:300;line-height:1.6;}
+
+/* ─── FOOTER ─── */
+footer{background:var(--navy);color:rgba(255,255,255,.55);padding:4rem 0 2rem;border-top:1px solid rgba(255,255,255,.06);}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2rem;}
+.ft-brand-name{font-family:var(--fh);font-weight:900;font-size:1.1rem;color:var(--white);margin-bottom:.8rem;letter-spacing:-.01em;}
+.ft-brand-name span{color:var(--orange);}
+.ft-brand p{font-size:.83rem;font-weight:300;line-height:1.7;max-width:240px;}
+.ft-col h4{font-family:var(--fh);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.ft-col a{text-decoration:none;color:rgba(255,255,255,.5);font-size:.83rem;font-weight:300;transition:color .18s;}
+.ft-col a:hover{color:var(--white);}
+.ft-btm{display:flex;align-items:center;justify-content:space-between;font-size:.75rem;font-weight:300;}
+.ft-social{display:flex;gap:.6rem;margin-top:1.2rem;}
+.ft-soc-btn{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;text-decoration:none;color:rgba(255,255,255,.5);font-size:.7rem;font-weight:700;transition:all .18s;}
+.ft-soc-btn:hover{border-color:var(--orange);color:var(--orange);}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .fw-grid{grid-template-columns:repeat(5,1fr);}
+  .impact-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:900px){
+  .hero-right{grid-template-columns:1fr 1fr;}
+  .gap-inner{grid-template-columns:1fr;}
+  .origin-grid{grid-template-columns:1fr;}
+  .phil-grid{grid-template-columns:1fr 1fr;}
+  .fw-grid{grid-template-columns:repeat(5,1fr);}
+  .fw-bottom{grid-template-columns:1fr;}
+  .diff-thead-cell:nth-child(2),.diff-cell:nth-child(2){display:none;}
+  .diff-thead{grid-template-columns:1fr 1fr;}
+  .diff-row{grid-template-columns:1fr 1fr;}
+  .impact-vision-strip{grid-template-columns:1fr;}
+  .learner-grid{grid-template-columns:1fr 1fr;}
+  .values-grid{grid-template-columns:1fr 1fr;}
+  .mv-pillars{grid-template-columns:1fr 1fr;}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+  .ft-btm{flex-direction:column;gap:.6rem;text-align:center;}
+  .nav-links li:not(.nav-cta-li):not(.nav-login-li){display:none;}
+}
+@media(max-width:600px){
+  .hero-right{grid-template-columns:1fr;}
+  .phil-grid{grid-template-columns:1fr;}
+  .fw-grid{grid-template-columns:repeat(2,1fr);}
+  .impact-grid{grid-template-columns:1fr 1fr;}
+  .learner-grid{grid-template-columns:1fr;}
+  .values-grid{grid-template-columns:1fr;}
+  .mv-pillars{grid-template-columns:1fr;}
+  .gap-stat-strip{flex-direction:column;}
+  .hero-proof{gap:1.2rem;}
+}
+</style>
+</head>
+<body class="pt">
+<!-- ═══════════════════════════════
+     NAVIGATION
+═══════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Life Beyond<span>Class</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="curriculum.html">Curriculum</a></li>
+      <li><a href="instructor.html">Become an Instructor</a></li>
+      <li class="nav-login-li"><a href="login.html" class="nav-login">Log In</a></li>
+      <li class="nav-cta-li"><a href="https://academy.lifebeyondclass.com/" class="nav-cta">Start Learning →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════
+     HERO
+═══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-a"></div>
+  <div class="hero-glow-b"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="reveal">
+        <div class="hero-kicker">
+          <div class="hero-kicker-line"></div>
+          <span class="hero-kicker-txt">Africa's Life Intelligence Institution</span>
+        </div>
+        <h1 class="hero-title">
+          School prepared you<br>for exams. We prepare<br>you for <em>life.</em>
+        </h1>
+        <p class="hero-sub">
+          Life Beyond Class is Africa's leading Life Intelligence Institution — built for everyone who knows there is a gap between what education gave them and what life actually demands.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://academy.lifebeyondclass.com/" class="btn btn-primary btn-lg">Join the Movement →</a>
+          <a href="curriculum.html" class="btn btn-outline-w btn-lg">Explore the Curriculum</a>
+        </div>
+        <div class="hero-proof">
+          <div class="hero-proof-item">
+            <div class="hero-proof-val">70+</div>
+            <div class="hero-proof-label">Life Courses</div>
+          </div>
+          <div class="hero-proof-item">
+            <div class="hero-proof-val">10</div>
+            <div class="hero-proof-label">Intelligence Dimensions</div>
+          </div>
+          <div class="hero-proof-item">
+            <div class="hero-proof-val">400+</div>
+            <div class="hero-proof-label">Learning Modules</div>
+          </div>
+          <div class="hero-proof-item">
+            <div class="hero-proof-val">3</div>
+            <div class="hero-proof-label">Learning Tiers</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right reveal reveal-d2">
+        <div class="hero-card hero-card-accent">
+          <div class="hero-card-icon">🎓</div>
+          <div class="hero-card-title">Not another course platform</div>
+          <div class="hero-card-body">Life Beyond Class is a structured institution built around the 10 dimensions of human intelligence — the curriculum life actually requires.</div>
+        </div>
+        <div class="hero-card hero-card-accent2">
+          <div class="hero-card-icon">🌍</div>
+          <div class="hero-card-title">African-rooted. Globally relevant.</div>
+          <div class="hero-card-body">Built for Africans on the continent and in the diaspora — and for every global citizen who believes intelligence is not what you were taught, but what you become.</div>
+        </div>
+        <div class="hero-card hero-card-accent3">
+          <div class="hero-card-icon">⚡</div>
+          <div class="hero-card-title">A movement, not a membership</div>
+          <div class="hero-card-body">Joining Beyond Class means joining a growing community of learners, leaders, and builders committed to becoming fully equipped for life.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     THE EDUCATION GAP
+═══════════════════════════════ -->
+<section class="gap-section">
+  <div class="wrap">
+    <div class="gap-inner">
+      <div class="reveal">
+        <span class="eyebrow">The Education Gap</span>
+        <h2 class="sec-title">The world changed.<br>The curriculum didn't.</h2>
+        <p class="gap-left" style="margin-top:1rem;">For generations, education has been designed to produce employees — not leaders. Examinees — not thinkers. Graduates — not builders.</p>
+        <p class="gap-left">The world is now faster, more complex, and more demanding than any classroom was built to prepare you for. And yet, most people leave formal education without ever being taught the things that matter most.</p>
+        <p class="gap-left">Life Beyond Class was created to fill that gap — with a structured, intentional curriculum built for the life you're actually living.</p>
+        <div class="gap-stat-strip">
+          <div class="gap-stat">
+            <div class="gap-stat-n">87%</div>
+            <div class="gap-stat-l">of graduates say school didn't teach them what life demanded</div>
+          </div>
+          <div class="gap-stat">
+            <div class="gap-stat-n">3 in 4</div>
+            <div class="gap-stat-l">professionals wish they had been taught financial intelligence in school</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d1">
+        <div style="font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-bottom:1.2rem;">What most people were never taught:</div>
+        <div class="gap-list">
+          <div class="gap-item"><div class="gap-item-icon">🧠</div><div class="gap-item-txt"><strong>How to understand themselves</strong>Self-awareness, emotional regulation, and the psychology of personal performance.</div></div>
+          <div class="gap-item"><div class="gap-item-icon">💰</div><div class="gap-item-txt"><strong>How to build wealth</strong>Financial intelligence, investing, entrepreneurship, and multiple income streams.</div></div>
+          <div class="gap-item"><div class="gap-item-icon">🗣️</div><div class="gap-item-txt"><strong>How to communicate effectively</strong>Negotiation, persuasion, conflict resolution, and powerful human connection.</div></div>
+          <div class="gap-item"><div class="gap-item-icon">👑</div><div class="gap-item-txt"><strong>How to lead</strong>Leadership across life, teams, families, organisations, and communities.</div></div>
+          <div class="gap-item"><div class="gap-item-icon">🚀</div><div class="gap-item-txt"><strong>How to identify opportunities</strong>Seeing, creating, and seizing the opportunities that others walk past.</div></div>
+          <div class="gap-item"><div class="gap-item-icon">🏛️</div><div class="gap-item-txt"><strong>How to create lasting impact</strong>Building institutions, legacies, and change that outlasts any individual life.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     WHY BEYOND CLASS EXISTS
+═══════════════════════════════ -->
+<section class="origin-section">
+  <div class="wrap">
+    <div class="origin-grid">
+      <div class="reveal">
+        <span class="eyebrow">Our Origin</span>
+        <h2 class="sec-title">Born from the gap <span style="font-style:italic;color:var(--orange);">every African</span> deserves to close.</h2>
+        <p style="font-size:.92rem;color:var(--ink-s);font-weight:300;line-height:1.9;margin-bottom:1rem;">Across Africa and around the world, millions of people — students, graduates, professionals, and entrepreneurs — carry qualifications but lack the practical intelligence to navigate careers, build businesses, and lead themselves and others effectively.</p>
+        <p style="font-size:.92rem;color:var(--ink-s);font-weight:300;line-height:1.9;margin-bottom:1rem;">The problem was not intelligence. It was curriculum. Nobody had built a structured institution to teach the intelligence that life actually demands — until now.</p>
+        <p style="font-size:.92rem;color:var(--ink-s);font-weight:300;line-height:1.9;margin-bottom:2rem;">Life Beyond Class is not a response to what was missing in one person's education. It is a response to a generational gap that has held back the potential of millions — and a bold commitment to close it.</p>
+        <a href="curriculum.html" class="btn btn-primary">Explore What We Teach →</a>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="origin-right-card">
+          <div class="origin-quote">
+            "Schools prepare people for examinations. <em>Beyond Class prepares people for life.</em>"
+          </div>
+          <p style="font-size:.83rem;color:var(--grey);font-weight:300;line-height:1.75;margin-bottom:1.6rem;">This is the founding conviction of Life Beyond Class — and it shapes everything we build, every course we create, and every learner we serve.</p>
+          <div class="origin-beliefs">
+            <div class="ob-item">
+              <div class="ob-num">1</div>
+              <div class="ob-body"><div class="ob-title">Real skills, not just certificates</div><div class="ob-desc">Every course translates directly into life outcomes — not just academic credentials.</div></div>
+            </div>
+            <div class="ob-item">
+              <div class="ob-num">2</div>
+              <div class="ob-body"><div class="ob-title">Structured for working people</div><div class="ob-desc">Short, focused modules that fit any schedule, at any stage of life.</div></div>
+            </div>
+            <div class="ob-item">
+              <div class="ob-num">3</div>
+              <div class="ob-body"><div class="ob-title">Progressive paths to mastery</div><div class="ob-desc">Core → Expanded → Premium tiers — every learner has a clear path forward.</div></div>
+            </div>
+            <div class="ob-item">
+              <div class="ob-num">4</div>
+              <div class="ob-body"><div class="ob-title">Built for every stage of life</div><div class="ob-desc">From secondary school to boardroom — Africa-rooted, globally applicable, always relevant.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     PHILOSOPHY
+═══════════════════════════════ -->
+<section class="philosophy-section">
+  <div class="wrap">
+    <div class="phil-header reveal">
+      <span class="eyebrow eyebrow-c">Our Philosophy</span>
+      <h2 class="sec-title" style="text-align:center;">Intelligence is not a single thing.<br>It is a way of living.</h2>
+      <p class="sec-sub" style="text-align:center;margin:0 auto;margin-top:.6rem;">Life Beyond Class is built on the belief that human success requires multiple forms of intelligence — and that education must develop all of them, not just academic recall.</p>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-card reveal">
+        <div class="phil-icon">🎯</div>
+        <div class="phil-title">Intelligence is lived, not certified</div>
+        <div class="phil-body">A certificate says you completed something. Intelligence shows in how you navigate money, relationships, leadership, and life. We build the latter.</div>
+      </div>
+      <div class="phil-card reveal reveal-d1">
+        <div class="phil-icon">🔁</div>
+        <div class="phil-title">Learning must produce transformation</div>
+        <div class="phil-body">Every module, every course, every dimension of the Beyond Class curriculum is designed to produce a measurable change in how you think and live — not just what you know.</div>
+      </div>
+      <div class="phil-card reveal reveal-d2">
+        <div class="phil-icon">🌍</div>
+        <div class="phil-title">Africa deserves world-class education</div>
+        <div class="phil-body">Not imported. Not adapted. Designed from the ground up for the realities, opportunities, and aspirations of Africans — at home and across the globe.</div>
+      </div>
+      <div class="phil-card reveal">
+        <div class="phil-icon">🧩</div>
+        <div class="phil-title">No intelligence can stand alone</div>
+        <div class="phil-body">Self-mastery without wealth intelligence leads to personal stagnation. Leadership without social intelligence produces toxic authority. All 10 dimensions work together.</div>
+      </div>
+      <div class="phil-card reveal reveal-d1">
+        <div class="phil-icon">🤝</div>
+        <div class="phil-title">Community accelerates growth</div>
+        <div class="phil-body">The most powerful education happens in the company of others who are equally committed. Beyond Class is a learning community, not just a platform.</div>
+      </div>
+      <div class="phil-card reveal reveal-d2">
+        <div class="phil-icon">🏛️</div>
+        <div class="phil-title">Individual growth creates collective impact</div>
+        <div class="phil-body">We don't just develop learners. We develop the leaders, builders, and changemakers Africa and the world need — one fully equipped person at a time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════
+     INTELLIGENCE FRAMEWORK
+═══════════════════════════════ -->
+<section class="framework-section">
+  <div class="fw-bg-glow"></div>
+  <div class="fw-bg-glow2"></div>
+  <div class="wrap">
+    <div class="fw-header reveal">
+      <span class="eyebrow eyebrow-w eyebrow-c">The Life Intelligence Framework™</span>
+      <h2 class="sec-title sec-title-w" style="text-align:center;">10 dimensions. One complete life.</h2>
+      <p class="sec-sub sec-sub-w" style="text-align:center;margin:0 auto;margin-top:.6rem;">The Beyond Class curriculum is structured around 10 intelligences that together cover every domain of a fully lived, fully equipped human life. This is the framework that sets us apart.</p>
+    </div>
+    <div class="fw-grid">
+      <div class="fw-card reveal">
+        <div class="fw-num">01</div>
+        <div class="fw-icon">🧠</div>
+        <div class="fw-name">Self Intelligence</div>
+        <div class="fw-desc">Know yourself deeply. Master your mind, emotions, and inner world.</div>
+      </div>
+      <div class="fw-card reveal reveal-d1">
+        <div class="fw-num">02</div>
+        <div class="fw-icon">⚖️</div>
+        <div class="fw-name">Life Intelligence</div>
+        <div class="fw-desc">Navigate every season of life with clarity, wisdom, and intention.</div>
+      </div>
+      <div class="fw-card reveal reveal-d2">
+        <div class="fw-num">03</div>
+        <div class="fw-icon">💰</div>
+        <div class="fw-name">Wealth Intelligence</div>
+        <div class="fw-desc">Build, grow, protect, and transfer wealth across every stage.</div>
+      </div>
+      <div class="fw-card reveal reveal-d1">
+        <div class="fw-num">04</div>
+        <div class="fw-icon">🚀</div>
+        <div class="fw-name">Opportunity Intelligence</div>
+        <div class="fw-desc">See, create, and seize opportunities that others walk past.</div>
+      </div>
+      <div class="fw-card reveal reveal-d2">
+        <div class="fw-num">05</div>
+        <div class="fw-icon">🤝</div>
+        <div class="fw-name">Social Intelligence</div>
+        <div class="fw-desc">Master human connection, influence, and the dynamics of relationships.</div>
+      </div>
+      <div class="fw-card reveal">
+        <div class="fw-num">06</div>
+        <div class="fw-icon">👑</div>
+        <div class="fw-name">Leadership Intelligence</div>
+        <div class="fw-desc">Lead people, organisations, communities, and nations effectively.</div>
+      </div>
+      <div class="fw-card reveal reveal-d1">
+        <div class="fw-num">07</div>
+        <div class="fw-icon">🎨</div>
+        <div class="fw-name">Creator Intelligence</div>
+        <div class="fw-desc">Turn ideas into impact — build, create, and monetise with vision.</div>
+      </div>
+      <div class="fw-card reveal reveal-d2">
+        <div class="fw-num">08</div>
+        <div class="fw-icon">🌍</div>
+        <div class="fw-name">Cultural Intelligence</div>
+        <div class="fw-desc">Know your roots. Navigate the world with identity and depth.</div>
+      </div>
+      <div class="fw-card reveal reveal-d1">
+        <div class="fw-num">09</div>
+        <div class="fw-icon">🤖</div>
+        <div class="fw-name">Future Intelligence</div>
+        <div class="fw-desc">Read the future. Build the digital and technological skills to own it.</div>
+      </div>
+      <div class="fw-card reveal reveal-d2">
+        <div class="fw-num">10</div>
+        <div class="fw-icon">🏛️</div>
+        <div class="fw-name">Legacy Intelligence</div>
+        <div class="fw-desc">Build institutions, leave inheritance, and create impact that endures.</div>
+      </div>
+    </div>
+    <div class="fw-bottom reveal" style="margin-top:3rem;">
+      <div class="fw-bottom-card">
+        <div class="fw-bc-label">Core Tier</div>
+        <div class="fw-bc-title">Foundation Courses</div>
+        <div class="fw-bc-body">Essential frameworks and principles in each intelligence dimension. Built for those at the beginning of their life education journey. Immediately applicable, practically structured.</div>
+      </div>
+      <div class="fw-bottom-card">
+        <div class="fw-bc-label">Expanded Tier</div>
+        <div class="fw-bc-title">Intermediate Mastery</div>
+        <div class="fw-bc-body">Deeper application, case studies, and tools for those who've built their foundation. For learners ready to move from understanding to expertise in each dimension.</div>
+      </div>
+      <div class="fw-bottom-card">
+        <div class="fw-bc-label">Premium Tier</div>
+        <div class="fw-bc-title">Advanced Mastery</div>
+        <div class="fw-bc-body">Expert-level intelligence for practitioners ready to lead, build, and create at the highest level. For those building real organisations and lasting impact in the world.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;position:relative;z-index:2;" class="reveal">
+      <a href="curriculum.html" class="btn btn-primary btn-lg">Explore the Full Framework →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     WHAT MAKES US DIFFERENT
+═══════════════════════════════ -->
+<section class="diff-section">
+  <div class="wrap">
+    <div class="diff-header reveal">
+      <span class="eyebrow">What Makes Us Different</span>
+      <h2 class="sec-title">Education reimagined.<br>From credentials to capability.</h2>
+      <p class="sec-sub" style="margin-top:.5rem;">We don't measure success by completion rates. We measure it by the clarity, capability, and confidence our learners carry into real life.</p>
+    </div>
+    <div class="diff-table reveal">
+      <div class="diff-thead">
+        <div class="diff-thead-cell">Learning Dimension</div>
+        <div class="diff-thead-cell">Traditional Education</div>
+        <div class="diff-thead-cell hl">Life Beyond Class</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell topic">Purpose of Learning</div>
+        <div class="diff-cell bad">Pass examinations and earn credentials</div>
+        <div class="diff-cell good">Develop intelligence for real life outcomes</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell topic">Curriculum Design</div>
+        <div class="diff-cell bad">Fixed, academic, theory-heavy</div>
+        <div class="diff-cell good">Structured, practical, outcome-focused</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell topic">What's Taught</div>
+        <div class="diff-cell bad">Subject knowledge and test preparation</div>
+        <div class="diff-cell good">10 intelligences that life actually demands</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell topic">Learner Type</div>
+        <div class="diff-cell bad">Students within a defined age window</div>
+        <div class="diff-cell good">Anyone at any stage of life, anywhere</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell topic">Outcome Measured</div>
+        <div class="diff-cell bad">Grades, credits, and certificates</div>
+        <div class="diff-cell good">Transformation, capability, and impact</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell topic">Relationship to Africa</div>
+        <div class="diff-cell bad">Imported models, inherited from colonial systems</div>
+        <div class="diff-cell good">Africa-rooted, globally relevant, locally real</div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell topic">Community</div>
+        <div class="diff-cell bad">Classmates, then alumni who drift apart</div>
+        <div class="diff-cell good">A lifelong movement of intentional learners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     IMPACT VISION
+═══════════════════════════════ -->
+<section class="impact-section">
+  <div class="wrap">
+    <div class="impact-header reveal">
+      <span class="eyebrow eyebrow-c">Our Impact Vision</span>
+      <h2 class="sec-title" style="text-align:center;">We're not building a platform.<br>We're building a generation.</h2>
+      <p class="sec-sub" style="text-align:center;margin:0 auto;margin-top:.6rem;">The long-term vision of Life Beyond Class is not measured in learners enrolled. It is measured in lives transformed, institutions built, and the generational impact of an Africa that is fully equipped.</p>
+    </div>
+    <div class="impact-grid reveal">
+      <div class="impact-card">
+        <div class="impact-n">1M<span>+</span></div>
+        <div class="impact-label">Lives Equipped</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-n">50K<span>+</span></div>
+        <div class="impact-label">Entrepreneurs Launched</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-n">10K<span>+</span></div>
+        <div class="impact-label">Leaders Developed</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-n">54<span>+</span></div>
+        <div class="impact-label">Nations Reached</div>
+      </div>
+    </div>
+    <div class="impact-vision-strip reveal">
+      <div>
+        <div class="ivs-title">A continent of people<br>who are <em>fully equipped</em><br>for the life they deserve.</div>
+        <div class="ivs-body" style="margin-top:.8rem;">Beyond Class is building the institution that Africa has never had — a world-class centre for Life Intelligence that serves every African, at every stage of life, in every corner of the world. This is not a small ambition. It is the right one.</div>
+      </div>
+      <div class="ivs-right">
+        <div class="ivs-item"><div class="ivs-item-icon">🏫</div><div class="ivs-item-txt">Becoming a globally respected model for alternative education</div></div>
+        <div class="ivs-item"><div class="ivs-item-icon">🌐</div><div class="ivs-item-txt">Building Africa's most influential learning institution</div></div>
+        <div class="ivs-item"><div class="ivs-item-icon">💡</div><div class="ivs-item-txt">Equipping the next generation of African leaders and builders</div></div>
+        <div class="ivs-item"><div class="ivs-item-icon">🏛️</div><div class="ivs-item-txt">Creating lasting institutional infrastructure for human development</div></div>
+        <div class="ivs-item"><div class="ivs-item-icon">🤝</div><div class="ivs-item-txt">Building a community that becomes a lifelong professional network</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════
+     LEARNER PROFILES
+═══════════════════════════════ -->
+<section class="learner-section">
+  <div class="wrap">
+    <div class="learner-header reveal">
+      <span class="eyebrow eyebrow-c">Who Beyond Class Serves</span>
+      <h2 class="sec-title" style="text-align:center;">Built for every person<br>who knows they're built for more.</h2>
+      <p class="sec-sub" style="text-align:center;margin:0 auto;margin-top:.5rem;">Life Beyond Class serves everyone who feels the gap — between who they are and who they know they could become, between what they were taught and what life actually needs.</p>
+    </div>
+    <div class="learner-grid">
+      <div class="lp-card reveal">
+        <div class="lp-avatar" style="background:var(--navy-pale);">🎓</div>
+        <div class="lp-role">The Student</div>
+        <div class="lp-desc">Still in school or recently graduated — stepping into a world that doesn't match the textbook. They need the intelligence that wasn't on any syllabus.</div>
+        <div class="lp-gains">
+          <div class="lp-gain">Self-awareness and confidence to begin well</div>
+          <div class="lp-gain">Financial and career intelligence from day one</div>
+          <div class="lp-gain">A clear sense of identity, purpose, and direction</div>
+        </div>
+      </div>
+      <div class="lp-card reveal reveal-d1">
+        <div class="lp-avatar" style="background:var(--orange-p);">💼</div>
+        <div class="lp-role">The Professional</div>
+        <div class="lp-desc">Employed, capable, and quietly wondering if this is all there is. They want more — more impact, more clarity, more confidence in what comes next.</div>
+        <div class="lp-gains">
+          <div class="lp-gain">Leadership and people intelligence to rise faster</div>
+          <div class="lp-gain">Strategic career navigation and opportunity mapping</div>
+          <div class="lp-gain">Wealth intelligence to build beyond the salary</div>
+        </div>
+      </div>
+      <div class="lp-card reveal reveal-d2">
+        <div class="lp-avatar" style="background:var(--green-p);">🚀</div>
+        <div class="lp-role">The Entrepreneur</div>
+        <div class="lp-desc">Building something, but learning the hard way. They need the business, financial, and leadership intelligence that no accelerator quite gave them.</div>
+        <div class="lp-gains">
+          <div class="lp-gain">Business and sales strategy that actually works</div>
+          <div class="lp-gain">Wealth intelligence to scale and protect what's built</div>
+          <div class="lp-gain">Leadership to build teams and institutions that last</div>
+        </div>
+      </div>
+      <div class="lp-card reveal">
+        <div class="lp-avatar" style="background:var(--navy-pale);">👑</div>
+        <div class="lp-role">The Leader</div>
+        <div class="lp-desc">In authority but still developing. They carry responsibility for others — and know that leadership without intelligence causes harm as much as good.</div>
+        <div class="lp-gains">
+          <div class="lp-gain">Executive and crisis leadership at the highest level</div>
+          <div class="lp-gain">Ethical decision-making and institutional governance</div>
+          <div class="lp-gain">Legacy and succession intelligence to build for after</div>
+        </div>
+      </div>
+      <div class="lp-card reveal reveal-d1">
+        <div class="lp-avatar" style="background:var(--orange-p);">🌍</div>
+        <div class="lp-role">The Diasporan</div>
+        <div class="lp-desc">Living and thriving in a global world — but longing for the cultural depth, African identity, and community that sustains them across borders.</div>
+        <div class="lp-gains">
+          <div class="lp-gain">Cultural and historical intelligence rooted in Africa</div>
+          <div class="lp-gain">Global career and opportunity navigation</div>
+          <div class="lp-gain">Community of ambitious Africans across the world</div>
+        </div>
+      </div>
+      <div class="lp-card reveal reveal-d2">
+        <div class="lp-avatar" style="background:var(--green-p);">🔄</div>
+        <div class="lp-role">The Lifelong Learner</div>
+        <div class="lp-desc">At any age, any stage — still hungry to grow, still certain there is more to become. They need an institution that grows with them and never runs out of depth.</div>
+        <div class="lp-gains">
+          <div class="lp-gain">Lifelong access to deepening intelligence across all 10 dimensions</div>
+          <div class="lp-gain">Community of equally committed learners at every level</div>
+          <div class="lp-gain">A framework for continuous growth with no ceiling</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     VALUES
+═══════════════════════════════ -->
+<section class="values-section">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Our Values</span>
+      <h2 class="sec-title">What we stand for.<br>In every course. Every word.</h2>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal">
+        <div class="val-icon">🎯</div>
+        <div class="val-name">Real-World Relevance</div>
+        <p class="val-desc">Every course, module, and lesson is built to produce a real-world outcome — not just theoretical knowledge or academic recall.</p>
+      </div>
+      <div class="val-card reveal reveal-d1">
+        <div class="val-icon">🌍</div>
+        <div class="val-name">Accessible to All</div>
+        <p class="val-desc">Quality life education should not be limited by geography, income, or institution. We exist to democratise what has always been elite.</p>
+      </div>
+      <div class="val-card reveal reveal-d2">
+        <div class="val-icon">📈</div>
+        <div class="val-name">Progressive Mastery</div>
+        <p class="val-desc">From Core foundations to Premium mastery — every learner has a clear, structured path from where they are to where they are called to be.</p>
+      </div>
+      <div class="val-card reveal">
+        <div class="val-icon">🤝</div>
+        <div class="val-name">Community First</div>
+        <p class="val-desc">Learning is more powerful in community. We don't build learners in isolation — we build a movement of people building better lives together.</p>
+      </div>
+      <div class="val-card reveal reveal-d1">
+        <div class="val-icon">💡</div>
+        <div class="val-name">Honest, Courageous Teaching</div>
+        <p class="val-desc">No fluff. No filler. We teach what works, what doesn't, and what you need to know — even when it challenges comfortable assumptions.</p>
+      </div>
+      <div class="val-card reveal reveal-d2">
+        <div class="val-icon">🏆</div>
+        <div class="val-name">Excellence Without Exception</div>
+        <p class="val-desc">Every instructor, every module, every interaction is held to the highest standard — because Africa deserves world-class education, not second-rate replicas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     STATS
+═══════════════════════════════ -->
+<section style="padding:70px 0;background:var(--grey-l);">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem;">
+      <span class="eyebrow eyebrow-c">The Institution in Numbers</span>
+      <h2 class="sec-title" style="text-align:center;">Where we are. Where we're going.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;" class="reveal">
+      <div class="stat-box" style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem 1rem;text-align:center;">
+        <div style="font-family:var(--fh);font-size:2.5rem;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.02em;">70+</div>
+        <div style="font-size:.72rem;color:var(--grey);font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-top:.4rem;">Life Courses</div>
+      </div>
+      <div class="stat-box" style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem 1rem;text-align:center;">
+        <div style="font-family:var(--fh);font-size:2.5rem;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.02em;">400+</div>
+        <div style="font-size:.72rem;color:var(--grey);font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-top:.4rem;">Learning Modules</div>
+      </div>
+      <div class="stat-box" style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem 1rem;text-align:center;">
+        <div style="font-family:var(--fh);font-size:2.5rem;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.02em;">10</div>
+        <div style="font-size:.72rem;color:var(--grey);font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-top:.4rem;">Intelligence Dimensions</div>
+      </div>
+      <div class="stat-box" style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem 1rem;text-align:center;">
+        <div style="font-family:var(--fh);font-size:2.5rem;font-weight:900;color:var(--navy);line-height:1;letter-spacing:-.02em;">3</div>
+        <div style="font-size:.72rem;color:var(--grey);font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-top:.4rem;">Mastery Tiers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     MISSION / CTA
+═══════════════════════════════ -->
+<section class="movement-section">
+  <div class="mv-glow"></div>
+  <div class="wrap">
+    <div class="mv-inner reveal">
+      <span class="eyebrow eyebrow-w eyebrow-c">Mission &amp; Vision</span>
+      <h2 class="mv-title">This is not a platform.<br>This is a <em>movement.</em></h2>
+      <p class="mv-sub">"To equip people with the wisdom, intelligence, skills, relationships, and opportunities required to thrive and create meaningful impact." — This is why Beyond Class exists. And we will not stop until it is done.</p>
+      <div class="mv-ctas">
+        <a href="https://academy.lifebeyondclass.com/" class="btn btn-primary btn-lg">Join the Movement →</a>
+        <a href="curriculum.html" class="btn btn-outline-w btn-lg">Explore the Curriculum</a>
+      </div>
+      <div class="mv-pillars">
+        <div class="mv-pillar">
+          <div class="mv-pillar-icon">🎓</div>
+          <div class="mv-pillar-title">An Institution, Not a Platform</div>
+          <div class="mv-pillar-body">Beyond Class is being built with the permanence and rigour of Africa's greatest institutions — designed to outlast any individual course or trend.</div>
+        </div>
+        <div class="mv-pillar">
+          <div class="mv-pillar-icon">🌍</div>
+          <div class="mv-pillar-title">A Movement with a Mission</div>
+          <div class="mv-pillar-body">Every learner who joins becomes part of something larger — a growing community of Africans committed to becoming fully equipped for life.</div>
+        </div>
+        <div class="mv-pillar">
+          <div class="mv-pillar-icon">🔭</div>
+          <div class="mv-pillar-title">A Vision That Cannot Wait</div>
+          <div class="mv-pillar-body">To become Africa's leading institution for Life Intelligence — and a globally respected model for what alternative education can be. This is the vision. Now is the time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="ft-brand-name">Life Beyond<span>Class</span></div>
+        <p>Africa's Life Intelligence Institution. Real-world skills for career, business, leadership, and life. Learning redefined — from the classroom to the real world.</p>
+        <div class="ft-social">
+          <a href="https://www.facebook.com/share/17HbQbkHog/" class="ft-soc-btn">f</a>
+          <a href="https://www.instagram.com/lifebeyondclass" class="ft-soc-btn">ig</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="courses.html">All Courses</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="https://lifebeyondclass.com/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="instructor.html">Become an Instructor</a></li>
+          <li><a href="https://lifebeyondclass.com/events/">Events</a></li>
+          <li><a href="https://lifebeyondclass.com/contact/">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="https://academy.lifebeyondclass.com/">Register Free</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="https://lifebeyondclass.com/dashboard/">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <span>© 2026 Life Beyond Class · Education for the life you're meant to live.</span>
+      <a href="https://lifebeyondclass.com" style="color:rgba(255,255,255,.25);text-decoration:none;">lifebeyondclass.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('show');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal, .reveal-scale').forEach(el => obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' }); }
+  });
+});
+
+// Nav scroll state
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(28,45,82,.08)' : 'none';
+}, { passive: true });
+</script>
+</body>
+</html>

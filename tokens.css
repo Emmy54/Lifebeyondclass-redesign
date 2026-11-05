@@ -9,8 +9,8 @@
   --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
   --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
   color-scheme: light;
-  --color-paper: oklch(97.08% 0.0086 84.6); --color-paper-2: oklch(99.45% 0.0057 84.6); --color-paper-3: oklch(97.11% 0.0177 59.5);
-  --color-ink: oklch(21.73% 0.0558 255.1); --color-ink-2: oklch(25.56% 0.0770 256.8); --color-muted: oklch(53.01% 0.0345 256.1);
+  --color-paper: oklch(97.08% 0.0086 84.6); --color-paper-2: oklch(99.45% 0.0057 84.6); --color-paper-3: oklch(97.11% 0.0177 59.5); --color-hero-stage: #17b6a5;
+  --color-ink: oklch(21.73% 0.0558 255.1); --color-ink-2: oklch(25.56% 0.0770 256.8); --color-muted: oklch(53.01% 0.0345 256.1); --color-muted-2: oklch(56.714% 0.07044 257.314);
   --color-rule: oklch(92.68% 0.0063 255.5);
   --color-accent: oklch(71.00% 0.1747 50.9); --color-accent-ink: oklch(25.56% 0.0770 256.8); --color-focus: oklch(64.38% 0.1675 48.8);
   --font-display: "Manrope", Arial, sans-serif; --font-body: "Manrope", Arial, sans-serif; --font-outlier: var(--font-body);
