@@ -324,6 +324,7 @@ h2 {
 .beyond-copy h2,
 .journey-intro h2,
 .learning-intro h2,
+.courses-intro h2,
 .final-cta h2 {
   max-width: 18ch;
   color: var(--color-ink);
@@ -746,6 +747,43 @@ h2 {
   white-space: nowrap;
 }
 
+.courses {
+  background: var(--color-paper-3);
+}
+
+.courses-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  column-gap: var(--gap-columns);
+  row-gap: var(--space-lg);
+  margin-block-end: var(--space-2xl);
+}
+
+.courses-intro>div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  align-items: end;
+  column-gap: var(--gap-columns);
+  row-gap: var(--space-md);
+  width: 100%;
+}
+
+.courses-intro p {
+  max-width: 48ch;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.courses-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .all-courses {
   margin-block-start: var(--space-lg);
   text-align: end;
@@ -1082,7 +1120,8 @@ h2 {
   }
 
   .journey-intro,
-  .learning-intro {
+  .learning-intro,
+  .courses-intro {
     display: grid;
     gap: var(--space-lg);
   }
@@ -1091,7 +1130,10 @@ h2 {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-md);
   }
-
+  .courses-intro>div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-md);
+  }
   .journey-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
