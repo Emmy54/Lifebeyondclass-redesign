@@ -88,3 +88,54 @@ if (scoreTable && !reduceMotion) {
     animateScores();
   }
 }
+
+const coursesCarousel = document.querySelector('#courses-carousel');
+
+if (coursesCarousel) {
+  const carouselButtons = coursesCarousel.parentElement.querySelectorAll('[data-carousel-control]');
+  const carouselDots = coursesCarousel.parentElement.querySelectorAll('[data-carousel-dot]');
+  const updateCarouselControls = () => {
+    const maximumScroll = coursesCarousel.scrollWidth - coursesCarousel.clientWidth;
+    carouselButtons.forEach((button) => {
+      if (button.dataset.carouselControl === 'previous') {
+        button.disabled = coursesCarousel.scrollLeft <= 1;
+      } else {
+        button.disabled = coursesCarousel.scrollLeft >= maximumScroll - 1;
+      }
+    });
+    const activeDot = maximumScroll > 0 ? Math.round((coursesCarousel.scrollLeft / maximumScroll) * (carouselDots.length - 1)) : 0;
+    carouselDots.forEach((dot, index) => {
+      const isActive = index === activeDot;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-current', String(isActive));
+    });
+  };
+
+  carouselButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const card = coursesCarousel.querySelector('.courses-item');
+      const gap = Number.parseFloat(getComputedStyle(coursesCarousel).columnGap) || 0;
+      const distance = (card?.getBoundingClientRect().width || coursesCarousel.clientWidth) + gap;
+      const direction = button.dataset.carouselControl === 'previous' ? -1 : 1;
+      coursesCarousel.scrollBy({
+        left: distance * direction,
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      });
+    });
+  });
+
+  carouselDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const maximumScroll = coursesCarousel.scrollWidth - coursesCarousel.clientWidth;
+      const position = Number(dot.dataset.carouselDot) / (carouselDots.length - 1);
+      coursesCarousel.scrollTo({
+        left: maximumScroll * position,
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      });
+    });
+  });
+
+  coursesCarousel.addEventListener('scroll', updateCarouselControls, { passive: true });
+  window.addEventListener('resize', updateCarouselControls);
+  updateCarouselControls();
+}
